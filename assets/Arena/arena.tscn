@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cor01bi2aebku"]
+
+[ext_resource type="Script" path="res://assets/Arena/arena.gd" id="1_88ehl"]
+[ext_resource type="Texture2D" uid="uid://cc5dr2m4sfr8g" path="res://assets/Arena/background.png" id="1_t2fp6"]
+[ext_resource type="PackedScene" uid="uid://bradjtsclpu41" path="res://assets/Paddle/paddle.tscn" id="2_oaal0"]
+[ext_resource type="PackedScene" uid="uid://dg1nli14omlhk" path="res://assets/Arena/wall.tscn" id="3_wwfgl"]
+[ext_resource type="PackedScene" uid="uid://cbo1s40xen2mi" path="res://assets/Arena/goal_area.tscn" id="4_1kwvx"]
+
+[node name="Arena" type="Node2D"]
+script = ExtResource("1_88ehl")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(280, 280)
+texture = ExtResource("1_t2fp6")
+
+[node name="Player1" parent="." instance=ExtResource("2_oaal0")]
+position = Vector2(50, 280)
+player_control = 0
+
+[node name="Player2" parent="." instance=ExtResource("2_oaal0")]
+position = Vector2(510, 280)
+player_control = 1
+
+[node name="NorthWall" parent="." instance=ExtResource("3_wwfgl")]
+position = Vector2(280, -2.5)
+scale = Vector2(29, 0.25)
+
+[node name="SouthWall" parent="." instance=ExtResource("3_wwfgl")]
+position = Vector2(280, 562.5)
+scale = Vector2(29, 0.25)
+
+[node name="WestGoalArea" parent="." instance=ExtResource("4_1kwvx")]
+position = Vector2(-1, 280)
+scale = Vector2(0.25, 28)
+
+[node name="EastGoalArea" parent="." instance=ExtResource("4_1kwvx")]
+position = Vector2(561, 280)
+scale = Vector2(0.25, 28)

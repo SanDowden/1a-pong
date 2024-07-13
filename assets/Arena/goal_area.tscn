@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbo1s40xen2mi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1r21r"]
+
+[node name="GoalArea" type="Area2D"]
+
+[node name="GoalAreaShape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1r21r")
